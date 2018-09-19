@@ -18,3 +18,47 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Upload new vehicle form
+
+//Upload new vehicle
+
+//Update vehicle details form
+
+//Update vehicle details
+
+//Drivers requested rides
+//accept ride, cancel ride post to database
+
+//All my rides
+//get all a drivers ride from db
+
+//Upload Route form
+
+//Post route data
+
+//Request ride/Upload ride (Homepage)
+
+//Post Ride
+//Ride confirmation from driver from DB
+//cancel ride
+
+//My ride (Track ride), complete Ride
+//post
+
+//payment after complete ride
+
+//Driver, payment received
+
+
+//admin routes //sidebar with the following links
+//datatables
+//all drivers (vehicles)
+
+//all users
+
+//Confirmed rides
+
+//Canceled rides
+
+//Setup routes
