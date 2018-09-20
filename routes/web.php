@@ -21,29 +21,47 @@ Auth::routes();
 //Homepage
 Route::get('/home', 'HomeController@index')->name('home');
 
+//Upload new vehicle form
 
-//About
-Route::get('/about', function () {
+//Upload new vehicle
 
-	$tasks = [
-'Tutorial 1',
-'Tutorial 2',
-'Tutorial 3'
-	];
+//Update vehicle details form
 
-    return view('about', compact('tasks'));
-});
+//Update vehicle details
+
+//Drivers requested rides
+//accept ride, cancel ride post to database
+
+//All my rides
+//get all a drivers ride from db
+
+//Upload Route form
+
+//Post route data
+
+//Request ride/Upload ride (Homepage)
+
+//Post Ride
+//Ride confirmation from driver from DB
+//cancel ride
+
+//My ride (Track ride), complete Ride
+//post
+
+//payment after complete ride
+
+//Driver, payment received
 
 
+//admin routes //sidebar with the following links
+//datatables
+//all drivers (vehicles)
 
-//Vehicles
+//all users
 
-Route::get('vehicles', function (){
+//Confirmed rides
 
-$vehicles = DB::table('vehicles')->get();
-// dd($vehicles);
-//return $vehicles;
+//Canceled rides
 
-return view('vehicles', compact('vehicles'));
+//Setup routes
 
-});
