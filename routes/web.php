@@ -17,4 +17,33 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
+//Homepage
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+//About
+Route::get('/about', function () {
+
+	$tasks = [
+'Tutorial 1',
+'Tutorial 2',
+'Tutorial 3'
+	];
+
+    return view('about', compact('tasks'));
+});
+
+
+
+//Vehicles
+
+Route::get('vehicles', function (){
+
+$vehicles = DB::table('vehicles')->get();
+// dd($vehicles);
+//return $vehicles;
+
+return view('vehicles', compact('vehicles'));
+
+});
