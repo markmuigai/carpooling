@@ -11,4 +11,9 @@ class Ride extends Model
     {
       return $this->belongsTo(User::class);
     }
+
+    public function Vehicle()
+    {
+      return $this->belongsTo(Vehicle::class);
+    }
 }
