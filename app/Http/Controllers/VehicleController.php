@@ -25,7 +25,7 @@ class VehicleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function newVehicleForm()
     {
         //
         return view('vehicle.newVehicle');
@@ -37,7 +37,7 @@ class VehicleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storeVehicle(Request $request)
     {
         //
         $vehicle = new Vehicle;

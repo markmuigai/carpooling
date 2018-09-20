@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Ride;
+use App\User;
+use Auth;
 use Illuminate\Http\Request;
 
 class RideController extends Controller
@@ -18,13 +20,14 @@ class RideController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new Route.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function newRideForm()
     {
         //
+        return view('Home');
     }
 
     /**
@@ -33,20 +36,35 @@ class RideController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storeRide(Request $request)
     {
         //
+        $ride = new Ride;
+        $ride->user_id = Auth::id();
+        $ride->pickup_location = request('pickup_location');
+        $ride->pickup_destination = request('pickup_destination');
+        //Retrieve a user who owns a car. The car should be one that
+        //only operates in the provided route
+        $ride->driver = User::whereHas('vehicles' ,function ($query){
+            $query->where('route', $routeId);
+        })->get();
+
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Ride  $ride
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Ride $ride)
-    {
-        //
+    public function rideConfirmation(Ride $ride){
+        //select the logged in users posted ride that has not yet
+        //been confirmed
+        $ride = Ride::where('confirmation', 'false')
+                ->where('user_id', Auth::id())
+                ->get();
+
+        //User cancels Ride, default false. Receive status from ajax button
+        $ride->cancelledByUser =
+
+        //Driver cancels ride, default false. Receive status from ajax button
+        $ride->cancelledByDriver =
+
+
     }
 
     /**
