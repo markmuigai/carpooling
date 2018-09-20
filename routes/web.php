@@ -20,9 +20,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //Upload new vehicle form
+Route::get('/vehicle/create', 'VehicleController@newVehicleForm')->name('new-vehicle');
 
 //Upload new vehicle
-
+Route::get('/vehicle/store', 'VehicleController@storeVehicle')->name('store-vehicle');
 //Update vehicle details form
 
 //Update vehicle details

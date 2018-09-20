@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\vehicle;
+use App\Vehicle;
+use App\User;
+use App\Ride;
+use Auth;
 use Illuminate\Http\Request;
 
 class VehicleController extends Controller
@@ -18,17 +21,18 @@ class VehicleController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new driver.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
         //
+        return view('vehicle.newVehicle');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created Vehicle in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -36,21 +40,30 @@ class VehicleController extends Controller
     public function store(Request $request)
     {
         //
+        $vehicle = new Vehicle;
+        $vehicle->user_id = Auth::id();
+        $vehicle->registration_no = request('registration_no');
+        $vehicle->vehicle_model = request('vehicle_model');
+        $vehicle->model_year = request('model_year');
+        $vehicle->psv_insurance = request('psv_insurance');
+        $vehicle->inspection_report = request('inspection_report');
+        $vehicle->save();
+        return redirect('/');
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified driver.
      *
      * @param  \App\vehicle  $vehicle
      * @return \Illuminate\Http\Response
      */
-    public function show(vehicle $vehicle)
+    public function myRides(vehicle $vehicle)
     {
         //
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified vehicle.
      *
      * @param  \App\vehicle  $vehicle
      * @return \Illuminate\Http\Response
@@ -61,7 +74,7 @@ class VehicleController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified vehicle in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\vehicle  $vehicle
@@ -73,7 +86,7 @@ class VehicleController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified vehicle from storage.
      *
      * @param  \App\vehicle  $vehicle
      * @return \Illuminate\Http\Response
