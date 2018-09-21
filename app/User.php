@@ -27,4 +27,16 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    //A user has can have one vehicle
+    public function Vehicle()
+    {
+        return $this->hasOne(Vehicle::class);
+    }
+
+    //A user can have many rides
+    public function Ride()
+    {
+        return $this->hasMany(Rides::class);
+    }
 }
