@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Ride;
+use App\Route;
 use Illuminate\Http\Request;
 
 class RideController extends Controller
@@ -22,9 +23,19 @@ class RideController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function requestRide()
     {
+      $routes = Route::all();
+
+      return view('requestRide', compact('routes'));
         //
+    }
+
+    public function getRide(Request $request){
+      $from = request('pickuplocation');
+      $to = request('destinationlocation');
+
+      dd($from);
     }
 
     /**

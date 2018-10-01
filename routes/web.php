@@ -15,6 +15,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/rider', function () {
+    return view('rider');
+});
+
+Route::get('/vehicles', function () {
+    return view('vehicles');
+});
+
+Route::get('/request-ride', 'RideController@requestRide')->name('request-ride');
+
+Route::post('/get-ride', 'RideController@getRide')->name('get-ride');
+
 Auth::routes();
 
 
@@ -65,4 +77,3 @@ Route::get('/vehicle/store', 'VehicleController@storeVehicle')->name('store-vehi
 //Canceled rides
 
 //Setup routes
-

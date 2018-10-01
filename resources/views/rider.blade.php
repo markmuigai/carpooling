@@ -155,7 +155,7 @@
                          <form id="cantact-form" action="" novalidate autocomplete="off" class="idealforms">
 
                              <div class="field">
-                                 <input name="username" type="text" placeholder="Name">
+                                 <input name="name" type="text" placeholder="Enter Name">
                                  <span class="error"></span>
                              </div>
 
@@ -167,34 +167,15 @@
 
 
                              <div class="field">
-                                 <input name="registration_no" type="number" placeholder="Enter Registration Number" >
+                                 <input name="password" type="password" placeholder="Password" >
                                  <span class="error"></span>
                              </div>
 
                              <div class="field">
-                                 <input name="vehicle_model" type="text" placeholder="Enter Vehicle Model" >
+                                 <input name="confirmpassword" type="password" placeholder="Confirm Password" >
                                  <span class="error"></span>
                              </div>
 
-														 <div class="field">
-																 <input name="model_year" type="text" placeholder="Enter Vehicle Model Year" >
-																 <span class="error"></span>
-														 </div>
-
-														 <div class="field">
-																 <input name="psv_insurance" type="text" placeholder="Enter PSV Insurance" >
-																 <span class="error"></span>
-														 </div>
-
-														 <div class="field">
-																 <input name="password" type="password" placeholder="Password" >
-																 <span class="error"></span>
-														 </div>
-
-														 <div class="field">
-																 <input name="confirmpassword" type="password" placeholder="Confirm Password" >
-																 <span class="error"></span>
-														 </div>
 
                              <div class="field buttons">
                                  <button type="submit" class="btn btn-lg blue-color">Register</button>
@@ -286,32 +267,12 @@
                             </div>
 
                             <div class="field">
-                                <input name="name" type="text" placeholder="Enter Name">
+                                <input name="username" type="text" placeholder="Username">
                                 <span class="error"></span>
                             </div>
 
                             <div class="field">
                                 <input name="email" type="email"  placeholder="E-Mail">
-                                <span class="error"></span>
-                            </div>
-
-														<div class="field">
-                                <input name="registration_no" type="number" placeholder="Car Registration Number">
-                                <span class="error"></span>
-                            </div>
-
-														<div class="field">
-                                <input name="vehicle_model" type="text" placeholder="Vehicle Model">
-                                <span class="error"></span>
-                            </div>
-
-														<div class="field">
-                                <input name="model_year" type="number" placeholder="Model Year">
-                                <span class="error"></span>
-                            </div>
-
-														<div class="field">
-                                <input name="psv_insurance" type="text" placeholder="PSV Insurance">
                                 <span class="error"></span>
                             </div>
 
@@ -321,7 +282,7 @@
                             </div>
 
                             <div class="field">
-                                <input name="confirmpassword" type="password"  placeholder="Password">
+                                <input name="confirmpass" type="password"  placeholder="Password">
                                 <span class="error"></span>
                             </div>
 

@@ -20,7 +20,7 @@ class CreateVehiclesTable extends Migration
             $table->string('vehicle_model')->nullable();
             $table->string('model_year')->nullable();
             $table->string('psv_insurance')->nullable();
-            $table->string('inspection_report')->nullable();
+            
             $table->timestamps();
         });
     }

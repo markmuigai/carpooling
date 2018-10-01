@@ -1,8 +1,3 @@
-
-
-
-
-
 <!DOCTYPE html>
 <!--[if IE 7]>                  <html class="ie7 no-js" lang="en">     <![endif]-->
 <!--[if lte IE 8]>              <html class="ie8 no-js" lang="en">     <![endif]-->
@@ -85,7 +80,7 @@
                                                         <a href="index.html">Home</a>
                                                     </li>
                                                     <li>
-                                                        <a href="rides.html">Ride</a>
+                                                        <a href="{{route('request-ride')}}">Ride</a>
                                                     </li>
                                                     <li>
                                                         <a href="add-ride.html">Driver</a>
@@ -142,74 +137,66 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="page-content">
+                    <div class="col-sm-12 col-md-12 col-xs-12">
 
-                        <div class="services clearfix">
+                        <div class="page-sub-title textcenter">
+                            <h2>Add new ride</h2>
+                            <div class="line"></div>
+                        </div><!-- end .page-sub-title -->
 
-                            <div class="col-md-12 col-sm-12 col-xs-12">
+                    </div><!-- end .col-lg-12 -->
 
-                              <div class="col-md-9 col-sm-12 col-xs-12">
+                    <div class="col-sm-12 col-md-12 col-xs-12">
 
-                     <div class="page-content">
+                        <div class="page-content add-new-ride">
 
-                         <form id="cantact-form" action="" novalidate autocomplete="off" class="idealforms">
+                            <form action="{{route('get-ride')}}" novalidate autocomplete="off" method="post" class="idealforms add-ride">
 
-                             <div class="field">
-                                 <input name="username" type="text" placeholder="Name">
-                                 <span class="error"></span>
-                             </div>
+                                <div class="field">
+                                    <select id="destination" name="pickuplocation">
+                                        <option value="default">From</option>
+                                        @foreach($routes as $route)
+                                        <option>{{$route->pickuplocation}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
 
-                             <div class="field">
-                                 <input name="email" type="email" placeholder="Email address" >
-                                 <span class="error"></span>
-                             </div>
+                                <div class="field">
+                                    <select id="destinationd" name="destinationlocation">
+                                        <option value="default">To</option>
+                                        @foreach($routes as $route)
+                                        <option>{{$route->destinationlocation}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
 
+                                <div class="field">
+                                    <input name="event" type="text" placeholder="Date" class="datepicker">
+                                </div>
 
+                                <div class="field">
+                                    <select id="destination" name="destination">
+                                        <option value="default">Number of seats</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select>
+                                </div>
 
-                             <div class="field">
-                                 <input name="registration_no" type="number" placeholder="Enter Registration Number" >
-                                 <span class="error"></span>
-                             </div>
+                                <div class="field buttons">
+                                    <button type="submit" class="btn btn-lg green-color">Submit</button>
+                                </div>
 
-                             <div class="field">
-                                 <input name="vehicle_model" type="text" placeholder="Enter Vehicle Model" >
-                                 <span class="error"></span>
-                             </div>
+                            </form>
 
-														 <div class="field">
-																 <input name="model_year" type="text" placeholder="Enter Vehicle Model Year" >
-																 <span class="error"></span>
-														 </div>
+                        </div><!-- end .page-content -->
 
-														 <div class="field">
-																 <input name="psv_insurance" type="text" placeholder="Enter PSV Insurance" >
-																 <span class="error"></span>
-														 </div>
+                    </div><!-- end .col-sm-12 -->
 
-														 <div class="field">
-																 <input name="password" type="password" placeholder="Password" >
-																 <span class="error"></span>
-														 </div>
+                </div><!-- end .row -->
+            </div><!-- end .container -->
 
-														 <div class="field">
-																 <input name="confirmpassword" type="password" placeholder="Confirm Password" >
-																 <span class="error"></span>
-														 </div>
-
-                             <div class="field buttons">
-                                 <button type="submit" class="btn btn-lg blue-color">Register</button>
-                             </div>
-
-                             <span id="invalid"></span>
-
-                         </form>
-
-                     </div><!-- end .page-content -->
-
-                 </div><!-- end .col-md-9 -->
-
-                        <div class="clearfix"></div>
-
+        </section><!-- end .main-content -->
 
         <footer id="footer">
 
@@ -219,7 +206,7 @@
                     <div class="row">
 
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                            Copyright by Carpooling
+                            Copyright by My ride
                         </div>
 
                     </div><!-- end .row -->
@@ -286,32 +273,12 @@
                             </div>
 
                             <div class="field">
-                                <input name="name" type="text" placeholder="Enter Name">
+                                <input name="username" type="text" placeholder="Username">
                                 <span class="error"></span>
                             </div>
 
                             <div class="field">
                                 <input name="email" type="email"  placeholder="E-Mail">
-                                <span class="error"></span>
-                            </div>
-
-														<div class="field">
-                                <input name="registration_no" type="number" placeholder="Car Registration Number">
-                                <span class="error"></span>
-                            </div>
-
-														<div class="field">
-                                <input name="vehicle_model" type="text" placeholder="Vehicle Model">
-                                <span class="error"></span>
-                            </div>
-
-														<div class="field">
-                                <input name="model_year" type="number" placeholder="Model Year">
-                                <span class="error"></span>
-                            </div>
-
-														<div class="field">
-                                <input name="psv_insurance" type="text" placeholder="PSV Insurance">
                                 <span class="error"></span>
                             </div>
 
@@ -321,7 +288,7 @@
                             </div>
 
                             <div class="field">
-                                <input name="confirmpassword" type="password"  placeholder="Password">
+                                <input name="confirmpass" type="password"  placeholder="Password">
                                 <span class="error"></span>
                             </div>
 
